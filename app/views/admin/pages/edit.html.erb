@@ -1,0 +1,59 @@
+<% content_for :head do %>
+<script type="text/javascript" src="/ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="/javascripts/editor.js"></script>
+<% end %>
+<% content_for :current do %>
+	<%= image_tag "admin/newpage.png" %>
+	<p>Edit</p>
+<% end %>
+
+<% content_for :action do %>
+	<a href="<%= admin_pages_url %>">
+		<%= image_tag "admin/page.png" %>
+		<p>Pages</p>
+	</a>
+<% end %>
+
+<% content_for :information do %>
+	<p>
+		Use this page to edit a current page.
+	</p>
+<% end %>
+<h1>Editing page</h1>
+
+<% form_for @page, :url => admin_page_url(@page) do |f| %>
+  <%= f.error_messages %>
+
+	 <div class="fieldWrapper"> 
+		<p>
+	    <%= f.label :title, "Title",:class => "inlined" %>
+	    <%= f.text_field :title %>
+	  	</p>
+	</div>  
+	<div class="fieldWrapper">
+	  <p>
+	    <%= f.label :menu, "Menu Entry", :class=>"inlined" %>
+	    <%= f.text_field :menu %>
+	  </p>
+	  </div>
+	<div class="fieldWrapper">
+	  <p>
+	    <%= f.label :slug, "URL Slug", :class => "inlined" %>
+	    <%= f.text_field :slug %>
+	  </p>
+	</div>
+  <p>
+    <%= f.label :body %><br />
+    <%= f.text_area :body, :id => 'body' %>
+  </p>
+  <p>
+    <%= f.label :rank %><br />
+    <%= f.text_field :rank %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', admin_page_path(@page) %> |
+<%= link_to 'Back', admin_pages_path %>

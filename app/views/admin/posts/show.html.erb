@@ -1,0 +1,45 @@
+<% content_for :current do %>
+	<%= image_tag "admin/newpage.png" %>
+	<p>Show</p>
+<% end %>
+
+<% content_for :action do %>
+	<a href="<%= admin_posts_url %>">
+		<%= image_tag "admin/posts.png" %>
+		<p>Posts</p>
+	</a>
+<% end %>
+
+<% content_for :information do %>
+	<p>
+		View an existing news post, without editing it.
+	</p>
+<% end %>
+<p>
+  <b>Title:</b>
+  <%=h @post.title %>
+</p>
+
+<p>
+  <b>Slug:</b>
+  <%=h @post.slug %>
+</p>
+
+<p>
+  <b>Excerpt:</b>
+  <%=h @post.excerpt %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%=h @post.body %>
+</p>
+
+<p>
+  <b>Published:</b>
+  <%=h @post.published %>
+</p>
+
+
+<%= link_to 'Edit', edit_admin_post_path(@post) %> |
+<%= link_to 'Back', admin_posts_path %>

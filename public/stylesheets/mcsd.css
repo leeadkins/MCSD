@@ -1,0 +1,134 @@
+/* Marion County Sheriff's Department CSS
+  Created by Lee Adkins and Ravsonic Studios
+*/
+body {
+  background-color: #000000;
+}
+
+#header {
+  background-image: url("/images/headerbg.png");
+  background-repeat: repeat-x;
+  height: 175px;
+}
+
+#header img{
+  margin-top: 5px;
+  margin-left: 10px;
+}
+
+#header .logo {
+  text-align: center;
+  vertical-align: middle;
+}
+
+#header .logo img{
+  
+  margin-top: 5px;
+}
+
+#header .tagger {
+  background-image: url("/images/headermiddlebg.png");
+  background-repeat: none;
+  height:175px;
+  overflow: hidden;
+  text-align: center;
+}
+
+#header .twitter {
+  background-image: url("/images/headertwitterbg.png");
+  background-repeat: none;
+  height: 175px;
+  overflow: hidden;
+}
+
+#header .twitter .tweet {
+  position: relative;
+  top: 45px;
+  left: 30px;
+  display: block;
+  width: 190px;
+  height: 70px;
+  overflow: hidden;
+  font-size: .9em;
+}
+
+#header .twitter .tweetstamp {
+  color: #FFFFFF;
+  font-size: 1.1em;
+  position: relative;
+  top: 55px;
+  left: 45px;
+}
+#header .twitter .tweetstamp a {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+
+#header .twitter .tweetstamp a:hover {
+  color: #FFFFFF;
+  text-decoration: underline;
+}
+
+#middle {
+  background-color: #404040;
+}
+
+#middle #menu {
+  background-color: #6d6d6d;
+  margin-right: 0px;
+  width: 200px;
+}
+
+#middle #menu ul {
+  padding: 0;
+  margin: 0;
+}
+
+#middle #menu ul li {
+  list-style: none;
+  display: block;
+  height: 35px;
+  background-image: url("/images/menubg.png");
+  background-repeat: none;
+  line-height: 35px;
+  padding-left: 15px;
+  color: #FFFFFF;
+  font-size: 1.3em;
+  /*Testing some things*/
+}
+
+#middle #menu ul li a{
+  display: block;
+  height: 35px;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+#middle #menu ul li:hover{
+  background-image: url("/images/menubghover.png");
+}
+#middle #menu ul li a:hover{
+  color: #e9c120;
+}
+
+#middle #menu ul li a:active{
+  color: #FF2222;
+}
+
+#middle #content {
+  background-color: #FFFFFF;
+}
+
+#middle #content .contentwrapper {
+  padding: 15px;
+}
+
+#footer  {
+  text-align: center;
+}
+
+#footer p {
+  color: #FFFFFF;
+  font-size: .9em;
+  padding: 5px;
+}

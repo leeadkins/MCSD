@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<title>Marion County Sheriff's Department</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="/stylesheets/screen.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="/stylesheets/print.css" type="text/css" media="print">	
+	<!--[if lt IE 8]><link rel="stylesheet" href="/stylesheets/ie.css" type="text/css" media="screen, projection"><![endif]-->
+	<link rel="stylesheet" href="/stylesheets/admin.css" type="text/css" media="screen, projection" />
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+	<%= yield(:head) %>
+</head>
+<body>
+	<div class="container">
+		<div id="header" class="span-20">
+			<h1>Site Administration</h1>
+		</div>
+		<div id="userinfo" class="span-4 last">
+
+		</div>
+		<div id="content" class="span-24 last">
+			<div id="sidebar" class="span-5">
+				<div class="current span-5 last">
+					<%= yield :current %>
+				</div>
+				<div class="navigation span-5 last">
+					<span class="navigation_icon">
+						<a href="<%= dashboard_url %>">
+						<img src="/images/admin/home.png"/>
+						<p>Home</p>
+						</a>
+					</span>
+					<span class="navigation_icon">
+						<%= yield :action %>
+					</span>
+				</div>
+
+				<div class="information span-5 last">
+					<%= yield :information %>
+				</div>
+			</div>
+			<div id="list" class="span-19 last">
+				<%= yield %>
+			</div>
+		</div>
+	</div>
+	<div id="footer">
+		Powered by the Sakura System from Ravsonic Studios
+	</div>
+</body>
+</html>

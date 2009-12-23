@@ -1,0 +1,25 @@
+<p>
+  <b>Title:</b>
+  <%=h @page.title %>
+</p>
+
+<p>
+  <b>Menu:</b>
+  <%=h @page.menu %>
+</p>
+
+<p>
+  <b>Slug:</b>
+  <%=h @page.slug %>
+</p>
+
+ <%= sanitize(@page.body) %>
+
+<p>
+  <b>Rank:</b>
+  <%=h @page.rank %>
+</p>
+
+
+<%= link_to 'Edit', edit_page_path(@page) %> |
+<%= link_to 'Back', pages_path %>

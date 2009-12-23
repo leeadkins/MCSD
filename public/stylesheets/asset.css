@@ -1,0 +1,30 @@
+/* The asset browser */
+body {
+  background-color: #333333;
+  color: #FFFFFF;
+  font-style: Helvetica, "Helvetica Neue", Arial, Verdana, sans-serif;
+}
+h1{
+  font-family: Helvetica, "Helvetica Neue", Arial, Verdana, sans-serif;
+}
+.assetbrowser ul {
+  padding: 0;
+}
+.assetbrowser ul li {
+  overflow: hidden;
+  margin: 5px;
+  width: 66px;
+  height: 66px;
+  border: 1px solid #000;
+  list-style: none;
+  float: left;
+	box-shadow: 3px 3px 3px #000;
+	 -moz-box-shadow: #000 3px 3px 3px;
+  -webkit-box-shadow: #000 3px 3px 3px;
+  border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+}
+.assetbrowser ul li img {
+  width: 64px;
+}

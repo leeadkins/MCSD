@@ -1,0 +1,45 @@
+<% content_for :current do %>
+	<%= image_tag "admin/page.png" %>
+	<p>Pages</p>
+<% end %>
+
+<% content_for :action do %>
+	<a href="<%= new_admin_page_url %>">
+		<%= image_tag "admin/newpage.png" %>
+		<p>New</p>
+	</a>
+<% end %>
+
+<% content_for :information do %>
+	<p>
+		This page contains a list of all the Content pages you've created.
+	</p>
+<% end %>
+<h1>Listing pages</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Menu</th>
+    <th>Slug</th>
+    <th>Body</th>
+    <th>Rank</th>
+  </tr>
+
+<% @pages.each do |page| %>
+  <tr>
+    <td><%=h page.title %></td>
+    <td><%=h page.menu %></td>
+    <td><%=h page.slug %></td>
+    <td><%=h page.body %></td>
+    <td><%=h page.rank %></td>
+    <td><%= link_to 'Show', admin_page_path(page) %></td>
+    <td><%= link_to 'Edit', edit_admin_page_path(page) %></td>
+    <td><%= link_to 'Destroy', admin_page_path(page), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New page', new_admin_page_path %>

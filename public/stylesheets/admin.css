@@ -1,0 +1,350 @@
+/* Marion County Sheriff's Department Admin Styles */
+/* (C)2009 Ravsonic Studios. All Rights Reserved */
+
+body {
+	background: #333333;
+}
+#header {
+	margin-top: 100px;
+	color:  #FFFFFF;
+}
+
+#userinfo {
+  
+	margin-top: 120px;
+  color: #FFFFFF;
+}
+
+#userinfo a { 
+  color: #FFFFFF;
+}
+
+#header p{
+ margin-top: 20px;
+ text-align: right;
+}
+#header h1 {
+	color: #FFFFFF;
+	font-weight: bold;
+}
+#menu {
+  width: 950px;
+	background-color: #FFFFFF;
+	padding-bottom: 5px;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	overflow: hidden;
+	box-shadow: 3px 3px 3px #000;
+	 -moz-box-shadow: #000 3px 3px 3px;
+  -webkit-box-shadow: #000 3px 3px 3px;
+}
+
+#innermenu {
+	position: relative;
+	left: 0px;
+	width: 2000px;
+}
+
+#menunav {
+	display: block;
+	list-style-type: none;
+	padding: 20px;
+	clear: both;
+}
+
+#menunav #previouslink {
+	float: left;
+}
+
+#menunav #nextlink {
+	
+	float:  right;
+}
+
+.large_button {
+	display:  block;
+	width: 175px;
+	height: 175px;
+	float:  left;
+	margin-top: 50px;
+	margin-left: 50px;
+	text-align: center;
+}
+.large_button img {
+  padding:0;
+}
+.large_button p{
+  font-size: 14px;
+  margin:0;
+  padding: 0;
+}
+
+.large_button a {
+  text-decoration: none;
+  color: #000;
+}
+
+.large_button a:hover {
+  text-decoration: underline;
+}
+
+#content {
+	background-color: #FFFFFF;
+	overflow: hidden;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	box-shadow: 3px 3px 3px #000;
+	 -moz-box-shadow: #000 3px 3px 3px;
+  -webkit-box-shadow: #000 3px 3px 3px;
+}
+
+#content #sidebar {
+  margin-right: 0px;
+}
+
+#content #sidebar .current {
+  margin-top: 10px;
+  margin-left: 15px;
+  width: 150px;
+}
+#content #sidebar .current p{
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+#content #sidebar .current img {
+  width: 150px;
+}
+
+#content #sidebar .navigation img {
+  width: 50px;
+}
+
+#content #sidebar .navigation .navigation_icon {
+  margin-left: 15px;
+  margin-right: 30px;
+  display: block;
+  float: left;
+}
+
+#content #sidebar .navigation .navigation_icon p {
+  text-align: center;
+  font-weight:bold;
+}
+
+.navigation_icon a {
+  text-decoration: none;
+  color: #000;
+}
+
+.navigation_icon a:hover {
+  text-decoration: underline;
+}
+
+.information p{
+  padding: 15px;
+}
+#footer {
+	text-align: center;
+	color: #FFFFFF;
+}
+
+
+#list {
+  background-color: #FFFFFF;
+}
+.list_header_title{
+  display: block;
+  float: left;
+  width: 200px;
+  font-size: 18px;
+}
+
+.list_header_slug{
+  font-size: 18px;
+  display: block;
+  float: left;
+  width: 200px;
+}
+
+.list_header_rank{
+  font-size: 18px;
+  display: block;
+  float: left;
+  width: 200px;
+}
+
+.page_list {
+  padding: 0;
+  clear: both;
+}
+
+
+.list_item_title {
+  display: block; 
+  float: left;
+  width: 200px;
+}
+
+.list_item_slug, .list_item_slug a {
+  display: block;
+  float: left;
+  width: 200px;
+  font-style: italic;
+  color: #000;
+  text-decoration: none;
+}
+
+.list_item_slug a:hover{
+  text-decoration: underline;
+  font-style: normal;
+}
+
+.list_item_edit {
+  display: block; 
+  float: left;
+  width: 100px;
+}
+
+.list_item_delete {
+  display: block;
+  float: left;
+  width: 100px;
+}
+.page_list li{
+  display:block;
+  clear: both;
+  list-style: none;
+}
+
+
+/* The asset browser */
+.assetbrowser {
+  
+}
+
+.assetbrowser ul {
+  padding: 0;
+}
+.assetbrowser ul li {
+  overflow: hidden;
+  margin: 5px;
+  width: 66px;
+  height: 66px;
+  border: 1px solid #000;
+  list-style: none;
+  float: left;
+	box-shadow: 3px 3px 3px #000;
+	 -moz-box-shadow: #000 3px 3px 3px;
+  -webkit-box-shadow: #000 3px 3px 3px;
+  border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+}
+.assetbrowser ul li img {
+  width: 64px;
+}
+
+/* Form Styling */
+.fieldWrapper {
+  clear: both;
+}
+.fieldWrapper p{
+  margin: 0;
+}
+.fieldWrapper label.inlined{
+  margin-top: 5px;
+  line-height: 30px;
+  height: 30px;
+  display: block;
+  font-size: 22px;
+  padding-left: 6px;
+  position: relative;
+  z-index: 1;
+  opacity: .75;
+}
+
+.excerptWrapper label.inlined{
+  margin-top: 5px;
+  display: block;
+  font-size: 14px;
+  padding-left: 6px;
+  position: relative;
+  z-index: 1;
+  opacity: .75;
+}
+
+
+label.inlined + input {
+  background-color: transparent;
+  position: relative;
+  z-index: 2;
+}
+
+label.inlined + textarea {
+  background-color: transparent;
+  position: relative;
+  z-index: 2;
+}
+
+input.inlineset{
+  margin-top: -32px;
+}
+
+textarea.inlineset{
+  margin-top: -30px;
+}
+
+.fieldWrapper input{
+  font-size: 22px;
+  height: 30px;
+  display: block;
+  width: 740px;
+}
+
+
+#id_excerpt {
+  font-size: 14px;
+  width: 730px;
+  height: 70px;
+}
+
+label.focus {
+  opacity: 0.35;
+}
+
+label.hastext {
+  opacity: 0.0;
+}
+
+form .submit{
+  cursor: pointer;
+  box-shadow: 3px 3px 3px #000;
+	 -moz-box-shadow: #000 3px 3px 3px;
+  -webkit-box-shadow: #000 3px 3px 3px;
+  border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	padding: 5px 10px 6px;
+  text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+  margin: 25px;
+  background-color: #3d3d3d; 
+  color: #e3e3e3; 
+  font-family: arial, verdana, ms sans serif; 
+  font-weight: bold; 
+  font-size: 12pt;
+  border-bottom: 1px solid rgba(0,0,0,0.25);
+}
+
+.tooltip{
+  background-color: #FFCC00;
+  box-shadow: 3px 3px 3px #000;
+	 -moz-box-shadow: #000 3px 3px 3px;
+  -webkit-box-shadow: #000 3px 3px 3px;
+  border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+}

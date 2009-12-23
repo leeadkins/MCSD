@@ -1,0 +1,29 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  lastname: MyString
+  firstname: MyString
+  alias: MyString
+  race: MyString
+  sex: MyString
+  eyes: MyString
+  hair: MyString
+  height: MyString
+  weight: MyString
+  other: MyString
+  marks: MyString
+  charges: MyString
+
+two:
+  lastname: MyString
+  firstname: MyString
+  alias: MyString
+  race: MyString
+  sex: MyString
+  eyes: MyString
+  hair: MyString
+  height: MyString
+  weight: MyString
+  other: MyString
+  marks: MyString
+  charges: MyString

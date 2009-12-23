@@ -1,0 +1,24 @@
+<h1>Editing asset</h1>
+
+<% form_for @asset, :url => admin_asset_path(@asset), :html => {:multipart => true} do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </p>
+  <p>
+	<%= f.label :file %><br />
+	<%= f.file_field :file %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', admin_asset_path(@asset) %> |
+<%= link_to 'Back', admin_assets_path %>
