@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.xml
   def index
-    @posts = Post.all
+    @posts = Post.published.all(:order => "created_at DESC")
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,7 +13,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.xml
   def show
-    @post = Post.find(params[:id])
+    @post = Post.published.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb

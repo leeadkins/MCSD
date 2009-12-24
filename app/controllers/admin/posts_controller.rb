@@ -44,6 +44,10 @@ class Admin::PostsController < ApplicationController
     @post = Post.new(params[:post])
 
     respond_to do |format|
+      #First, let's fix it if it fails to validate
+      if @post.invalid?
+        @post.fix_slug
+      end
       if @post.save
         flash[:notice] = 'Post was successfully created.'
         format.html { redirect_to(admin_post_url(@post)) }

@@ -1,3 +1,4 @@
+<h2>Recent News</h2>
 <% @posts.each do |post| %>
 <div class="news_post">
   <h3>
@@ -7,7 +8,12 @@
 		<%= l post.created_at, :format => :post %>
 	</h5>
 	<p>
-		<%=strip_tags post.body %>
+		<% if post.excerpt.blank? %>
+		<%= truncate(strip_tags(post.body), :length => 1000) %>
+		<% else %>
+		<%=strip_tags post.excerpt %>
+		<% end %>
 	</p>
+	<p><%= link_to "Read More", post %></p>
 </div>
 <% end %>
