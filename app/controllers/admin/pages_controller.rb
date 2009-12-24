@@ -3,7 +3,7 @@ class Admin::PagesController < ApplicationController
   # GET /pages
   # GET /pages.xml
   def index
-    @pages = Page.all
+    @pages = Page.all(:order => "rank")
 
     respond_to do |format|
       format.html # index.html.erb
@@ -82,5 +82,14 @@ class Admin::PagesController < ApplicationController
       format.html { redirect_to(admin_pages_url) }
       format.xml  { head :ok }
     end
+  end
+  
+  def sort
+    #Nothing Yet!
+
+    params[:page].each_with_index do |id, index|
+      Page.update_all(['rank=?', index+1], ['id=?', id])
+    end
+    render :text => "test" 
   end
 end

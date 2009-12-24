@@ -9,7 +9,17 @@ class PagesController < ApplicationController
       format.xml  { render :xml => @pages }
     end
   end
-
+  
+  #GET /<slug>
+  #GET /<slug>.xml
+  def slugged_get
+    @page = Page.find_by_slug(params[:slug])
+    respond_to do |format|
+      format.html {render :action => :show}
+      format.xml { render :xml => @page }
+    end
+  end
+  
   # GET /pages/1
   # GET /pages/1.xml
   def show

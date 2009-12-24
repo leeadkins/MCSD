@@ -183,37 +183,27 @@ body {
 }
 
 
-.list_item_title {
+.list_entry {
   display: block; 
   float: left;
   width: 200px;
 }
 
-.list_item_slug, .list_item_slug a {
-  display: block;
-  float: left;
-  width: 200px;
+.slug, .slug a {
   font-style: italic;
   color: #000;
   text-decoration: none;
 }
 
-.list_item_slug a:hover{
+.slug a:hover{
   text-decoration: underline;
   font-style: normal;
 }
 
-.list_item_edit {
-  display: block; 
-  float: left;
-  width: 100px;
+.action {
+  width: 50px;
 }
 
-.list_item_delete {
-  display: block;
-  float: left;
-  width: 100px;
-}
 .page_list li{
   display:block;
   clear: both;

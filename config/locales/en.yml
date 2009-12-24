@@ -3,3 +3,6 @@
 
 en:
   hello: "Hello world"
+  time:
+    formats:
+      post: "Posted on %A, %B %d, %Y at %I:%M %p " 

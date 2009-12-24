@@ -1,3 +1,14 @@
+<% content_for :head do %>
+	<%= javascript_tag "var AUTH_TOKEN = #{form_authenticity_token.inspect};" if protect_against_forgery? %>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#pagesList').sortable({ items: '.list_item', axis: 'y', update: function(){
+				$.post('/admin/pages/sort', '_method=put&authenticity_token='+ AUTH_TOKEN + '&' +$(this).sortable('serialize'));
+			}});
+		});
+	</script>
+<% end%>
+
 <% content_for :current do %>
 	<%= image_tag "admin/page.png" %>
 	<p>Pages</p>
@@ -16,29 +27,17 @@
 	</p>
 <% end %>
 <h1>Listing pages</h1>
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Menu</th>
-    <th>Slug</th>
-    <th>Body</th>
-    <th>Rank</th>
-  </tr>
-
+<ul id="pagesList" class="page_list">
 <% @pages.each do |page| %>
-  <tr>
-    <td><%=h page.title %></td>
-    <td><%=h page.menu %></td>
-    <td><%=h page.slug %></td>
-    <td><%=h page.body %></td>
-    <td><%=h page.rank %></td>
-    <td><%= link_to 'Show', admin_page_path(page) %></td>
-    <td><%= link_to 'Edit', edit_admin_page_path(page) %></td>
-    <td><%= link_to 'Destroy', admin_page_path(page), :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+  <li class="list_item" id="page_<%= page.id -%>">
+    <%=h page.menu %>
+   <%=h page.slug %>
+    <%= link_to 'Show', admin_page_path(page) %>
+    <%= link_to 'Edit', edit_admin_page_path(page) %>
+   <%= link_to 'Destroy', admin_page_path(page), :confirm => 'Are you sure?', :method => :delete %>
+  </li>
 <% end %>
-</table>
+</ul>
 
 <br />
 

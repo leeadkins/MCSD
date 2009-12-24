@@ -32,9 +32,10 @@
 		<div id="middle" class="span-24 last">
 			<div id="menu" class="span-5">
 				<ul>
-					<li><a href="/">Home</a></li>
+					<li><%= link_to "Home", root_url %></li>
+					<li><%= link_to "News", posts_url %></li>
+					<%= render :partial => '/layouts/page' %>
 				</ul>
-
 			</div>
 			<div id="content" class="span-19 last">
 				<div class="contentwrapper">

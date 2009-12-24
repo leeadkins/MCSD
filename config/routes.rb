@@ -9,6 +9,7 @@ ActionController::Routing::Routes.draw do |map|
   # Keep in mind you can assign values other than :controller and :action
   map.dashboard "admin/dashboard", :controller => 'admin/dashboard', :action => 'index'
   map.browser "admin/dashboard/browser", :controller => 'admin/dashboard', :action => 'browser'
+
   # Sample of named route:
   #   map.purchase 'products/:id/purchase', :controller => 'catalog', :action => 'purchase'
   # This route can be invoked with purchase_url(:id => product.id)
@@ -31,7 +32,7 @@ ActionController::Routing::Routes.draw do |map|
   # Sample resource route within a namespace:
   map.namespace :admin do |admin|
     # Directs /admin/products/* to Admin::ProductsController (app/controllers/admin/products_controller.rb)
-    admin.resources :pages
+    admin.resources :pages, :collection => {:sort => :put}
     admin.resources :posts
     admin.resources :wanteds
     admin.resources :assets
@@ -45,6 +46,7 @@ ActionController::Routing::Routes.draw do |map|
   # Install the default routes as the lowest priority.
   # Note: These default routes make all actions in every controller accessible via GET requests. You should
   # consider removing or commenting them out if you're using named routes and resources.
+  map.slugged_page "/:slug", :controller => 'pages', :action => 'slugged_get'
   #map.connect ':controller/:action/:id'
   #map.connect ':controller/:action/:id.:format'
 end
