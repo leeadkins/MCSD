@@ -30,13 +30,13 @@
     <td><%=h wanted.other %></td>
     <td><%=h wanted.marks %></td>
     <td><%=h wanted.charges %></td>
-    <td><%= link_to 'Show', wanted %></td>
-    <td><%= link_to 'Edit', edit_wanted_path(wanted) %></td>
-    <td><%= link_to 'Destroy', wanted, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Show', admin_wanted_path(wanted) %></td>
+    <td><%= link_to 'Edit', edit_admin_wanted_path(wanted) %></td>
+    <td><%= link_to 'Destroy', admin_wanted_path(wanted), :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New wanted', new_wanted_path %>
+<%= link_to 'New wanted', new_admin_wanted_path %>

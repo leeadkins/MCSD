@@ -1,6 +1,6 @@
 <h1>Editing wanted</h1>
 
-<% form_for(@wanted) do |f| %>
+<% form_for @wanted, :url => admin_wanted_path(@wanted), :html => {:multipart => true} do |f| %>
   <%= f.error_messages %>
 
   <p>
@@ -51,10 +51,14 @@
     <%= f.label :charges %><br />
     <%= f.text_field :charges %>
   </p>
+	<p>
+		<%= f.label :mug %><br />
+		<%= f.file_field :mug %>
+	</p>
   <p>
     <%= f.submit 'Update' %>
   </p>
 <% end %>
 
-<%= link_to 'Show', @wanted %> |
-<%= link_to 'Back', wanteds_path %>
+<%= link_to 'Show', admin_wanted_path(@wanted) %> |
+<%= link_to 'Back', admin_wanteds_path %>

@@ -85,8 +85,6 @@ class Admin::PagesController < ApplicationController
   end
   
   def sort
-    #Nothing Yet!
-
     params[:page].each_with_index do |id, index|
       Page.update_all(['rank=?', index+1], ['id=?', id])
     end

@@ -46,7 +46,7 @@ class Admin::WantedsController < ApplicationController
     respond_to do |format|
       if @wanted.save
         flash[:notice] = 'Wanted was successfully created.'
-        format.html { redirect_to(@wanted) }
+        format.html { redirect_to(admin_wanted_path(@wanted)) }
         format.xml  { render :xml => @wanted, :status => :created, :location => @wanted }
       else
         format.html { render :action => "new" }
@@ -63,7 +63,7 @@ class Admin::WantedsController < ApplicationController
     respond_to do |format|
       if @wanted.update_attributes(params[:wanted])
         flash[:notice] = 'Wanted was successfully updated.'
-        format.html { redirect_to(@wanted) }
+        format.html { redirect_to(admin_wanted_path(@wanted)) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

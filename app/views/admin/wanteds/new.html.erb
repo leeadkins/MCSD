@@ -1,6 +1,6 @@
 <h1>New wanted</h1>
 
-<% form_for(@wanted) do |f| %>
+<% form_for @wanted, :url => admin_wanteds_path, :html => {:multipart => true} do |f| %>
   <%= f.error_messages %>
 
   <p>
@@ -51,9 +51,13 @@
     <%= f.label :charges %><br />
     <%= f.text_field :charges %>
   </p>
+	<p>
+		<%= f.label :mug %><br />
+		<%= f.file_field :mug %>
+	</p>
   <p>
     <%= f.submit 'Create' %>
   </p>
 <% end %>
 
-<%= link_to 'Back', wanteds_path %>
+<%= link_to 'Back', admin_wanteds_path %>

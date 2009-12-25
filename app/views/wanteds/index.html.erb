@@ -1,42 +1,16 @@
-<h1>Listing wanteds</h1>
-
-<table>
-  <tr>
-    <th>Lastname</th>
-    <th>Firstname</th>
-    <th>Alias</th>
-    <th>Race</th>
-    <th>Sex</th>
-    <th>Eyes</th>
-    <th>Hair</th>
-    <th>Height</th>
-    <th>Weight</th>
-    <th>Other</th>
-    <th>Marks</th>
-    <th>Charges</th>
-  </tr>
+<h1>Marion County Most Wanted</h1>
 
 <% @wanteds.each do |wanted| %>
-  <tr>
-    <td><%=h wanted.lastname %></td>
-    <td><%=h wanted.firstname %></td>
-    <td><%=h wanted.alias %></td>
-    <td><%=h wanted.race %></td>
-    <td><%=h wanted.sex %></td>
-    <td><%=h wanted.eyes %></td>
-    <td><%=h wanted.hair %></td>
-    <td><%=h wanted.height %></td>
-    <td><%=h wanted.weight %></td>
-    <td><%=h wanted.other %></td>
-    <td><%=h wanted.marks %></td>
-    <td><%=h wanted.charges %></td>
-    <td><%= link_to 'Show', wanted %></td>
-    <td><%= link_to 'Edit', edit_wanted_path(wanted) %></td>
-    <td><%= link_to 'Destroy', wanted, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+  <div class="wanted">
+		<%= image_tag wanted.mug.url(:thumb)  %>
+		<p><%=h wanted.firstname.capitalize %> <%=h wanted.lastname.capitalize %></p>
+		<p><%=h wanted.alias %></p>
+		<p><%=h wanted.race %> | <%=h wanted.sex %> | <%=h wanted.eyes %></p>
+		<p><%=h wanted.hair %> | <%=h wanted.height %> | <%=h wanted.weight %></p>
+		
+    <p><%=h wanted.marks %></p>
+		<p><%=h wanted.charges %></p>
+		<p><%=h wanted.other %></p>
+		<p><%= link_to 'Show', wanted %></p>
+	</div>
 <% end %>
-</table>
-
-<br />
-
-<%= link_to 'New wanted', new_wanted_path %>

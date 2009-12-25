@@ -10,6 +10,5 @@ class Admin::DashboardController < ApplicationController
   end
   
   def upload
-    
   end
 end

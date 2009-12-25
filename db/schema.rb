@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091223084047) do
+ActiveRecord::Schema.define(:version => 20091224075003) do
 
   create_table "assets", :force => true do |t|
     t.string   "name"
@@ -57,6 +57,10 @@ ActiveRecord::Schema.define(:version => 20091223084047) do
     t.string   "charges"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "mug_file_name"
+    t.string   "mug_content_type"
+    t.integer  "mug_file_size"
+    t.datetime "mug_updated_at"
   end
 
 end
