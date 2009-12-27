@@ -5,7 +5,8 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :wanteds, :as => "most-wanted"
   map.resources :posts
   map.resources :pages
-  map.resources :users
+  #Uncomment below to allow users to be created from the main site 
+  #map.resources :users
   map.resources :user_sessions
   # The priority is based upon order of creation: first created -> highest priority.
 
