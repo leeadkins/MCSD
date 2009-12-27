@@ -16,6 +16,12 @@ class Admin::DashboardController < ApplicationController
     render :layout => false
   end
   
+  def individual
+    @asset = Asset.find(params[:id])
+    @ckcallback = params[:callback]
+    render :layout => false
+  end
+  
   def upload
     if !params[:upload].blank?
       callback = params[:CKEditorFuncNum]

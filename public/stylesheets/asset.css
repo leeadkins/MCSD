@@ -28,3 +28,33 @@ h1{
 .assetbrowser ul li img {
   width: 64px;
 }
+#assetlinks + p{
+  clear:both;
+}
+
+#assetlinks + p a{
+  color: #FFF;
+}
+
+#assetimage {
+  float: left;
+}
+
+#assetlinks {
+  float:left;
+  margin-left: 25px;
+}
+#assetlinks a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #222;
+  background-color: #bbb;
+  margin: 5px;
+  display: block;
+  width: 100px;
+  height: 20px;
+  padding: 10px;
+}
+#assetlinks a:hover {
+  background-color: #339933;
+}

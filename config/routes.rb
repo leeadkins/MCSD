@@ -14,6 +14,7 @@ ActionController::Routing::Routes.draw do |map|
   #   map.connect 'products/:id', :controller => 'catalog', :action => 'view'
   # Keep in mind you can assign values other than :controller and :action
   map.browser "admin/dashboard/browser", :controller => 'admin/dashboard', :action => 'browser'
+  map.individual 'admin/dashboard/browser/individual/:id', :controller => 'admin/dashboard', :action => 'individual' 
   map.upload "admin/upload", :controller => 'admin/dashboard', :action => 'upload', :method => :post
   # Sample of named route:
   #   map.purchase 'products/:id/purchase', :controller => 'catalog', :action => 'purchase'
