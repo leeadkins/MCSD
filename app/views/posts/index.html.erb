@@ -1,13 +1,4 @@
 <h2>Recent News</h2>
-<div id="user_nav">  
-  <% if current_user %>  
-    <%= link_to "Edit profile", edit_user_path(current_user) %>  
-    <%= link_to "Logout", logout_path %>  
-  <% else %>  
-    <%= link_to "Register", new_user_path %>  
-    <%= link_to "Log in", login_path %>  
-  <% end %>  
-</div>
 <% @posts.each do |post| %>
 <div class="news_post">
   <h3>
