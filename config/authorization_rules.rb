@@ -35,7 +35,7 @@ end
 
 privileges do
   privilege :manage do
-    includes :create, :read, :update, :delete
+    includes :create, :read, :update, :delete, :sort
   end
   privilege :read, :includes => [:index, :show]
   privilege :create, :includes => :new

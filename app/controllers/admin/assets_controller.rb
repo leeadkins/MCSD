@@ -1,4 +1,9 @@
 class Admin::AssetsController < ApplicationController
+  #For Authentication
+  before_filter :require_user
+  #For Authorization
+  filter_resource_access
+  
   layout "subpage"
   # GET /assets
    # GET /assets.xml

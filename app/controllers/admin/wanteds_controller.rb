@@ -1,4 +1,9 @@
 class Admin::WantedsController < ApplicationController
+  #For Authentication
+  before_filter :require_user
+  #For Authorization
+  filter_resource_access
+  
   # GET /wanteds
   # GET /wanteds.xml
   layout "subpage"

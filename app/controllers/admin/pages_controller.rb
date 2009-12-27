@@ -1,5 +1,10 @@
 class Admin::PagesController < ApplicationController
+  #For Authentication  
+  before_filter :require_user
+  #For Authorization
   filter_resource_access
+  filter_access_to :sort
+  
   layout 'subpage'
   # GET /pages
   # GET /pages.xml

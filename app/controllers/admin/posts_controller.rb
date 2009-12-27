@@ -1,4 +1,10 @@
 class Admin::PostsController < ApplicationController
+  #For Authentication
+  before_filter :require_user
+  #For Authorization
+  filter_resource_access
+  
+  
   # GET /posts
   # GET /posts.xml
   layout 'subpage'

@@ -1,5 +1,9 @@
 class Admin::DashboardController < ApplicationController
   layout "admin"
+  #For Authentication
+  before_filter :require_user
+  #For Authorization
+  filter_resource_access
  
   def index
   end
