@@ -70,7 +70,7 @@ $(document).ready(function()	{
 	CKEDITOR.replace( 'body',
 	    {
 	        filebrowserImageBrowseUrl : '/admin/dashboard/browser',
-	        filebrowserImageUploadUrl : '/admin/assets/api/new/',
+	        filebrowserImageUploadUrl : '/admin/upload',
 	        filebrowserImageWindowWidth : '680',
 	        filebrowserImageWindowHeight : '480'
 	    });
