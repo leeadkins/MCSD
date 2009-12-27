@@ -1,4 +1,5 @@
 class Admin::PagesController < ApplicationController
+  filter_resource_access
   layout 'subpage'
   # GET /pages
   # GET /pages.xml
