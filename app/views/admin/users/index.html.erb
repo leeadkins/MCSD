@@ -1,7 +1,24 @@
+<% content_for :current do %>
+	<%= image_tag "admin/user.png" %>
+	<p>Users</p>
+<% end %>
+
+<% content_for :action do %>
+	<a href="<%= new_admin_user_url %>">
+		<%= image_tag "admin/newuser.png" %>
+		<p>New</p>
+	</a>
+<% end %>
+
+<% content_for :information do %>
+	<p>
+		This page contains a list of all the users of the site.
+	</p>
+<% end %>
 <ul>
 	<% for user in @users %>
 		<li>
-			<%= link_to user.username, edit_admin_user_path(user) %>
+			<%= link_to user.username, edit_admin_user_path(user) %>, <%= link_to 'Destroy', admin_user_path(user), :confirm => 'Are you sure?', :method => :delete %>
 		</li>
 	<% end %>
 </ul>

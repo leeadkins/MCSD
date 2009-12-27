@@ -54,8 +54,9 @@ class Admin::UsersController < ApplicationController
   
   def destroy
     @user = User.find(params[:id])
-    if @user = current_user
+    if @user == current_user
       flash[:notice] = "You can't delete yourself."
+      redirect_to admin_users_url
     else
       @user.destroy
       respond_to do |format|

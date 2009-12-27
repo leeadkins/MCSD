@@ -10,6 +10,9 @@ class User < ActiveRecord::Base
     end
     return roles
   end
+  
+  
+  
   #needed for dec_auth
   def role_symbols
     return self.roles

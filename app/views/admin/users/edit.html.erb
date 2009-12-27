@@ -1,3 +1,20 @@
+<% content_for :current do %>
+	<%= image_tag "admin/newuser.png" %>
+	<p>Edit</p>
+<% end %>
+
+<% content_for :action do %>
+	<a href="<%= admin_users_url %>">
+		<%= image_tag "admin/user.png" %>
+		<p>Users</p>
+	</a>
+<% end %>
+
+<% content_for :information do %>
+	<p>
+		Use this page to edit an existing user.
+	</p>
+<% end %>
 <h3>Edit a user</h3>
 <% form_for @user, :url => admin_user_path(@user) do |f| %>
 	<p>
