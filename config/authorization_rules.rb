@@ -29,7 +29,8 @@ authorization do
     has_permission_on :admin_posts, :to => :manage
     has_permission_on :admin_wanteds, :to => :manage
     has_permission_on :admin_assets, :to => :manage
-    has_permission_on :admin_dashboard, :to => :manage
+    has_permission_on :admin_dashboard, :to => [:manage, :browser, :upload]
+    has_permission_on :admin_users, :to => :manage
   end
 end
 

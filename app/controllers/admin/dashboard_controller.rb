@@ -3,7 +3,7 @@ class Admin::DashboardController < ApplicationController
   #For Authentication
   before_filter :require_user
   #For Authorization
-  filter_resource_access
+  filter_access_to :all
  
   def index
   end

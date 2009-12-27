@@ -1,0 +1,35 @@
+<h3>Edit a user</h3>
+<% form_for @user, :url => admin_user_path(@user) do |f| %>
+	<p>
+		<%= f.label :username, "Username" %><br/>
+		<%= f.text_field :username %>
+	</p>
+	<p>
+		<%= f.label :fullname, "Real Name" %><br/>
+		<%= f.text_field :fullname %>
+	</p>
+	<p>
+		<%= f.label :email, "Email" %><br/>
+		<%= f.text_field :email %>
+	</p>
+	<p>
+		<%= f.label :password, "Password" %><br/>
+		<%= f.password_field :password %>
+	</p>
+	<p>
+		<%= f.label :password_confirmation, "Password Confirmation" %><br/>
+		<%= f.password_field :password_confirmation %>
+	</p>
+	<p>
+		<%= f.label :roles %>
+		<% for role in User.allroles %>
+			<%= check_box_tag "user[roles][]", role, @user.roles.include?(role) %>
+			<%=h role.to_s.humanize %>
+		<% end %>
+		<%= hidden_field_tag "user[roles][]"%>
+	</p>
+	<%= f.submit "Edit User"%>
+<% end %>
+<p>
+	<%= link_to "Back", admin_users_path %>
+</p>
