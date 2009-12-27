@@ -3,5 +3,6 @@ log/*.log
 tmp/**/*
 public/system/*
 config/database.yml
+config/deploy.rb
 db/seeds.rb
 db/*.sqlite3
