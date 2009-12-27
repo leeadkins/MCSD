@@ -1,13 +1,17 @@
 ActionController::Routing::Routes.draw do |map|
+  map.login "login", :controller => "user_sessions", :action => "new"
+  map.logout "logout", :controller => "user_sessions", :action => "destroy"
+  
   map.resources :wanteds, :as => "most-wanted"
   map.resources :posts
   map.resources :pages
+  map.resources :users
+  map.resources :user_sessions
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:
   #   map.connect 'products/:id', :controller => 'catalog', :action => 'view'
   # Keep in mind you can assign values other than :controller and :action
-  map.dashboard "admin/dashboard", :controller => 'admin/dashboard', :action => 'index'
   map.browser "admin/dashboard/browser", :controller => 'admin/dashboard', :action => 'browser'
 
   # Sample of named route:
@@ -46,6 +50,7 @@ ActionController::Routing::Routes.draw do |map|
   # Install the default routes as the lowest priority.
   # Note: These default routes make all actions in every controller accessible via GET requests. You should
   # consider removing or commenting them out if you're using named routes and resources.
+  map.dashboard "admin", :controller => 'admin/dashboard', :action => 'index'
   map.slugged_page "/:slug", :controller => 'pages', :action => 'slugged_get'
   #map.connect ':controller/:action/:id'
   #map.connect ':controller/:action/:id.:format'

@@ -14,9 +14,13 @@ class PagesController < ApplicationController
   #GET /<slug>.xml
   def slugged_get
     @page = Page.find_by_slug(params[:slug])
-    respond_to do |format|
-      format.html {render :action => :show}
-      format.xml { render :xml => @page }
+    unless @page
+      render_404
+    else
+      respond_to do |format|
+        format.html {render :action => :show}
+        format.xml { render :xml => @page }
+      end
     end
   end
   
