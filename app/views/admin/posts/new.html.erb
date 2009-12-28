@@ -19,30 +19,33 @@
 	Use this page to create a news post.
 	</p>
 <% end %>
-<h1>New post</h1>
 
 <% form_for @post, :url => admin_posts_url do |f| %>
   <%= f.error_messages %>
-
+	<div class="fieldWrapper">
   <p>
-    <%= f.label :title %><br />
+    <%= f.label :title, "Post Title", :class => "inlined" %>
     <%= f.text_field :title %>
   </p>
+	</div>
+	<div class="fieldWrapper excerptWrapper">
   <p>
-    <%= f.label :excerpt %><br />
+    <%= f.label :excerpt, "Post Excerpt (Optional)", :class => "inlined" %>
     <%= f.text_area :excerpt, :id => "excerpt" %>
   </p>
+	</div>
   <p>
-    <%= f.label :body %><br />
     <%= f.text_area :body, :id=> 'body'%>
   </p>
+	<div class="fieldWrapper">
   <p>
+    <%= f.label :slug, "Post Slug (Optional)", :class => "inlined" %>
+    <%= f.text_field :slug %>
+  </p>
+	</div>
+	<p>
     <%= f.label :published %>:
     <%= f.check_box :published %>
-  </p>
-  <p>
-    <%= f.label :slug %>:
-    <%= f.text_field :slug %>
   </p>
   <p>
     <%= f.submit 'Create' %>

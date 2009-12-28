@@ -1,6 +1,6 @@
 /* Sakura Form Editor Functions */
 function setupFadingLabels(){
-  $("label.inlined+input, label.inlined+#id_excerpt").each(function (type){
+  $("label.inlined+input, label.inlined+#excerpt").each(function (type){
 		//If JS is turned on, set the inline
 		
 		$(this).prev("label.inlined").css({'opacity':'0.0'});
