@@ -1,18 +1,19 @@
 class Admin::OffendersController < ApplicationController
   #For Authentication
-  #before_filter :require_user
+  before_filter :require_user
   #For Authorization
+  filter_resource_access
   
   layout "subpage"
   # GET /assets
    # GET /assets.xml
    def index
-      @offenders = Offender.all
-      respond_to do |format|
-        format.html # index.html.erb
-        format.xml  { render :xml => @offenders }
-        format.json { render :json => @offenders }
-      end
+     @offenders = Offender.all
+     respond_to do |format|
+       format.html # index.html.erb
+       format.xml  { render :xml => @offenders }
+       format.json { render :json => @offenders }
+     end
    end
 
    # GET /assets/1
