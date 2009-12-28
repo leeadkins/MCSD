@@ -1,10 +1,11 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :offenders, :only => [:index, :show]
+
   
   map.login "login", :controller => "user_sessions", :action => "new"
   map.logout "logout", :controller => "user_sessions", :action => "destroy"
   
   map.resources :wanteds, :as => "most-wanted"
-  map.resources :offenders
   map.resources :posts
   map.resources :pages
   #Remove the :only clause below to allow users to be created from the main site 

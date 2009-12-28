@@ -1,0 +1,32 @@
+<h1>Listing offenders</h1>
+
+<table>
+  <tr>
+    <th>Tid</th>
+    <th>Lastname</th>
+    <th>Firstname</th>
+    <th>Middle</th>
+    <th>Address</th>
+    <th>City</th>
+    <th>Target</th>
+  </tr>
+
+<% @offenders.each do |offender| %>
+  <tr>
+    <td><%=h offender.tid %></td>
+    <td><%=h offender.lastname %></td>
+    <td><%=h offender.firstname %></td>
+    <td><%=h offender.middle %></td>
+    <td><%=h offender.address %></td>
+    <td><%=h offender.city %></td>
+    <td><%=h offender.target %></td>
+    <td><%= link_to 'Show', admin_offender_path(offender) %></td>
+    <td><%= link_to 'Edit', edit_admin_offender_path(offender) %></td>
+    <td><%= link_to 'Destroy', admin_offender_path(offender), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New offender', new_admin_offender_path %>

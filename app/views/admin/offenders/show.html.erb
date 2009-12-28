@@ -1,0 +1,38 @@
+<p>
+  <b>Tid:</b>
+  <%=h @offender.tid %>
+</p>
+
+<p>
+  <b>Lastname:</b>
+  <%=h @offender.lastname %>
+</p>
+
+<p>
+  <b>Firstname:</b>
+  <%=h @offender.firstname %>
+</p>
+
+<p>
+  <b>Middle:</b>
+  <%=h @offender.middle %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%=h @offender.address %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%=h @offender.city %>
+</p>
+
+<p>
+  <b>Target:</b>
+  <%=h @offender.target %>
+</p>
+
+
+<%= link_to 'Edit', edit_admin_offender_path(@offender) %> |
+<%= link_to 'Back', admin_offenders_path %>

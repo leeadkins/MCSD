@@ -23,6 +23,7 @@ Rails::Initializer.run do |config|
   config.gem "authlogic"
   config.gem "bitmask-attribute"
   config.gem "declarative_authorization"
+  config.gem "nokogiri"
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
   # config.plugins = [ :exception_notification, :ssl_requirement, :all ]
