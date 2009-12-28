@@ -20,6 +20,6 @@
 	<a href="<%= @asset.file.url(:large) %>">Large</a>
 	<a href="<%= @asset.file.url %>">Original</a>
 	</div>
-	<p><%= link_to "Back to List", :action => :browser %></p>
+	<p><%= link_to "Back to List", :action => :browser, :CKEditorFuncNum => @ckcallback %></p>
 </body>
 </html>
