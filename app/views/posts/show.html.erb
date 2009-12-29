@@ -5,6 +5,7 @@
 <h5>
 	<%= l @post.created_at, :format => :post %>
 </h5>
-<p>
 	<%= sanitize @post.body %>
-</p>
+<p>
+	<%= link_to "Back to News Posts", posts_url %>
+<p>
