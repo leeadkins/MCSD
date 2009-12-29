@@ -1,10 +1,10 @@
 <h2>
   <%=h @post.title %>
 </h2>
-
 <h5>
 	<%= l @post.created_at, :format => :post %>
 </h5>
+
 	<%= sanitize @post.body %>
 <p>
 	<%= link_to "Back to News Posts", posts_url %>
