@@ -1,10 +1,10 @@
 <h3>Sex Offenders</h3>
 <table>
   <tr>
-    <th>Tid</th>
+    <th>TID</th>
 		<th>Image</th>
-    <th>Lastname</th>
-    <th>Firstname</th>
+    <th>Last Name</th>
+    <th>First Name</th>
     <th>Middle</th>
     <th>Address</th>
     <th>City</th>
@@ -14,11 +14,11 @@
   <tr>
     <td><%=h offender.tid %></td>
     <td><%=image_tag offender.image.url(:thumb) %>
-		<td><%=h offender.lastname %></td>
-    <td><%=h offender.firstname %></td>
-    <td><%=h offender.middle %></td>
-    <td><%=h offender.address %></td>
-    <td><%=h offender.city %></td>
+		<td><%=h offender.lastname.titleize %></td>
+    <td><%=h offender.firstname.titleize %></td>
+    <td><%=h offender.middle.titleize %></td>
+    <td><%=h offender.address.titleize %></td>
+    <td><%=h offender.city.titleize %></td>
   </tr>
 <% end %>
 </table>
