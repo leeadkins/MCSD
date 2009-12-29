@@ -1,4 +1,4 @@
-== Sakura CMS v1.1
+== Sakura CMS v1.0
 
 The Marion County Sheriff's Department webpage is based on a simple Rails-based CMS called Sakura. For now, Sakura isn't in a state to be extracted as a general purpose CMS, so if you want to use it, you'll need to modify this existing site. In the future, Sakura will be its own full-fledged Rails application.
 
