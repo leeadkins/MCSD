@@ -34,9 +34,9 @@
 				<ul>
 					<li><%= link_to "Home", root_url %></li>
 					<li><%= link_to "News", posts_url %></li>
-					<li><%= link_to "Most Wanted", wanteds_url %>
-					<li><%= link_to "Sex Offenders", offenders_url %>
 					<%= render :partial => '/layouts/page' %>
+					<li><%= link_to "Most Wanted", wanteds_url %></li>
+					<li><%= link_to "Sex Offenders", offenders_url %></li>
 				</ul>
 			</div>
 			<div id="content" class="span-19 last">
@@ -46,9 +46,22 @@
 			</div>
 		</div><!-- /div middle-->
 		<div id="footer" class="span-24 last">
-			<p>
-				&copy;2009-2010 Marion County Sheriff's Department. Powered by Ravsonic Studios.
-			</p>
+			<div id="info" class="span-12">
+				<p>&copy;2010 Marion County Sheriff's Department. All Rights Reserved.</p>
+			</div>
+			<div id="callout" class="span-10 last">
+				<h3>Marion County Sheriff's Department</h3>
+				<p>
+					5 Oak Avenue<br/>
+					Jasper, Tennessee 37347, USA<br/>
+					Phone: (423) 942-2525 Emergency: 911<br/>
+				</p>				
+			</div>
+			<div id="bottomlogo" class="span-2 last">
+				<p>
+				<%= image_tag "logosmall.png"%>
+				</p>
+			</div>
 		</div>
 	</div>
 </body>

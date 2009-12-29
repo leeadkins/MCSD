@@ -125,11 +125,43 @@ body {
 }
 
 #footer  {
-  text-align: center;
+  margin-bottom: 15px;
+  background-color: #333;
+  background-image: url("/images/bottominfobg.png");
+   background-repeat: repeat-x;
+  height: 85px;
+  text-align: right;
 }
 
-#footer p {
-  color: #FFFFFF;
+#footer #callout h3 {
+  color: #DDDDDD;
+  margin-top: 5px;
+  margin-right: 5px;
+  margin-bottom: 0;
+}
+
+#footer #callout p {
+  color: #DDD;
+  margin-right: 5px;
   font-size: .9em;
   padding: 5px;
+}
+
+
+#footer #info {
+  color: #DDD;
+  text-align: left;
+  line-height: 85px;
+}
+
+
+#footer #info p{
+  margin-left: 5px;
+  color: #DDD;
+  text-align: left;
+  line-height: 85px;
+}
+
+#footer #bottomlogo {
+  line-height: 85px;
 }
