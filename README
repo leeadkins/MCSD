@@ -24,6 +24,9 @@ and you'll be ready to go.  For now, all required gems are vendored.  If you wis
 
 authlogic, bitmask-attribute, declarative_authorization, paperclip
 
+nokogiri is used for screen scraping. It is also a framework gem that depends on some external extensions, so it isn't frozen into the vendor directory.
+If you wish to use the rake tasks for automatically loading the Sex Offender registry, ensure that you run rake gems:install or gem install nokogiri before installing this app.
+
 In the future, these will be unvendored.
 
 
