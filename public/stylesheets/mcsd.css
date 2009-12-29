@@ -124,6 +124,30 @@ body {
   padding: 15px;
 }
 
+.homeblock {
+  padding: 5px;
+  border: 1px solid #ddd;
+  margin: 10px;
+  float: left;
+  background-color: #eee;
+  width: 325px;
+}
+
+.homeblock h5{
+  text-align: center;
+}
+.ghso {
+  text-align: center;
+}
+
+.ghso h5 {
+  margin-bottom: 5px;
+}
+
+.ghso img {
+  padding: 10px;
+}
+
 #footer  {
   margin-bottom: 15px;
   background-color: #333;
