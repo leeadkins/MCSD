@@ -13,7 +13,12 @@
 <% @offenders.each do |offender| %>
   <tr>
     <td><%=h offender.tid %></td>
-    <td><%=image_tag offender.image.url(:thumb) %>
+    <td class="offenderimage">
+				<% if offender.absconded %>
+					<%= image_tag "missingoverlaysmall.png", :class => "wanted_overlay" %>
+				<% end %>
+				<%=image_tag offender.image.url(:thumb) %>
+		</td>
 		<td><%=h offender.lastname.titleize %></td>
     <td><%=h offender.firstname.titleize %></td>
     <td><%=h offender.middle.titleize %></td>

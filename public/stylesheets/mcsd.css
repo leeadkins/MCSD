@@ -148,6 +148,19 @@ body {
   padding: 10px;
 }
 
+
+.offenderimage {
+  position: relative;
+  display: block;
+}
+
+.offenderimage .wanted_overlay {
+  position: absolute;
+  top: 2;
+  left: 2;
+  z-index: 2;
+}
+
 #footer  {
   margin-bottom: 15px;
   background-color: #333;

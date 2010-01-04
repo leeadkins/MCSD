@@ -33,6 +33,10 @@
   <%=h @offender.target %>
 </p>
 
+<p>
+	<b>Absconded:</b>
+	<%=h @offender.absconded %>
+</p>
 
 <%= link_to 'Edit', edit_admin_offender_path(@offender) %> |
 <%= link_to 'Back', admin_offenders_path %>
