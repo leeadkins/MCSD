@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   # GET /pages
   # GET /pages.xml
   def index
-    @pages = Page.all
+    @pages = Page.published.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,7 +13,7 @@ class PagesController < ApplicationController
   #GET /<slug>
   #GET /<slug>.xml
   def slugged_get
-    @page = Page.find_by_slug(params[:slug])
+    @page = Page.published.find_by_slug(params[:slug])
     unless @page
       render_404
     else
@@ -27,7 +27,7 @@ class PagesController < ApplicationController
   # GET /pages/1
   # GET /pages/1.xml
   def show
-    @page = Page.find(params[:id])
+    @page = Page.published.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
