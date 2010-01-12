@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100104190558) do
+ActiveRecord::Schema.define(:version => 20100111215740) do
 
   create_table "assets", :force => true do |t|
     t.string   "name"
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(:version => 20100104190558) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "parent"
+    t.boolean  "published"
   end
 
   create_table "posts", :force => true do |t|
