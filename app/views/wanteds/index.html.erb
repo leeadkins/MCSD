@@ -2,12 +2,11 @@
 
 <% @wanteds.each do |wanted| %>
   <div class="wanted">
-		<%= image_tag wanted.mug.url(:thumb)  %>
+		<p><%= image_tag wanted.mug.url(:thumb)  %></p>
 		<p><%=h wanted.firstname.capitalize %> <%=h wanted.lastname.capitalize %></p>
 		<p><%=h wanted.alias %></p>
 		<p><%=h wanted.race %> | <%=h wanted.sex %> | <%=h wanted.eyes %></p>
 		<p><%=h wanted.hair %> | <%=h wanted.height %> | <%=h wanted.weight %></p>
-		
     <p><%=h wanted.marks %></p>
 		<p><%=h wanted.charges %></p>
 		<p><%=h wanted.other %></p>
