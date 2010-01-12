@@ -118,9 +118,73 @@ namespace :sakura do
       end
     end
     
-    desc "Updates the Sex Offender Registry"
-    task :update => :environment do
+    namespace :update do
+      desc "Resyncs the database with the TBI Registry, adding and deleting as needed"
+      task :all => :environment do
+         offenders = get_registry
+          temp = []
+          current = Offender.all
+          for offender in offenders
+            if !current.any?{|o| o.tid == offender[:tid]}
+              #If it's in the registry and not in our list
+              temp << offender
+              puts "Found a new offender"
+            else
+              #if it's in our registry and IS in out list
+              current.delete_if {|o| o.tid == offender[:tid]}
+            end
+          end
+          
+          #Now, temp should have new ones, and current should only
+          #have those that aren't in the TBI database anymore
+          
+          for person in current
+            puts "Removing Old SOR Entry: #{person.tid}"
+            person.destroy
+          end
+          
+          for person in temp
+            o = Offender.new
+            o.tid = person[:tid]
+            o.lastname = person[:lastname]
+            o.firstname = person[:firstname]
+            o.middle = person[:middle]
+            o.city = person[:city]
+            o.target = person[:linktarget]
+            o.address = person[:address]
+            #Now, we need to handle this whole image problem
+            o.image = person[:image]
+            o.save
+            puts "Created SOR Entry: #{o.tid}"
+          end  
+      end
       
+      desc "Only adds new offenders to the registry, doesn't delete old."
+      task :new => :environment do
+        offenders = get_registry
+        temp = []
+        current = Offender.all
+        for offender in offenders
+          if !current.any?{|o| o.tid == offender[:tid]}
+            temp << offender
+            puts "Found a new offender"
+          end
+        end
+        for person in temp
+          o = Offender.new
+          o.tid = person[:tid]
+          o.lastname = person[:lastname]
+          o.firstname = person[:firstname]
+          o.middle = person[:middle]
+          o.city = person[:city]
+          o.target = person[:linktarget]
+          o.address = person[:address]
+          #Now, we need to handle this whole image problem
+          o.image = person[:image]
+          o.save
+          puts "Created SOR Entry: #{o.tid}"
+        end
+      end
     end
     
     desc "Lists current entries in the Sex Offender Registry"
