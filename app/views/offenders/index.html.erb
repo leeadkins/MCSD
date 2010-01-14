@@ -15,7 +15,7 @@
     <td><%=h offender.tid %></td>
     <td class="offenderimage">
 				<% if offender.absconded %>
-					<%= image_tag "missingoverlaysmall.png", :class => "wanted_overlay" %>
+					<%= image_tag "wantedoverlaysmall.png", :class => "wanted_overlay" %>
 				<% end %>
 				<%=image_tag offender.image.url(:thumb) %>
 		</td>
