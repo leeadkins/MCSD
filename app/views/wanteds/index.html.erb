@@ -1,15 +1,31 @@
-<h1>Marion County Most Wanted</h1>
+<% content_for :head do %>
+	<script type="text/javascript" src="/javascripts/jquery.lightbox-0.5.js"></script>
+	<link rel="stylesheet" href="/stylesheets/jquery.lightbox-0.5.css" type="text/css" media="screen" title="no title" charset="utf-8">
+	<script type="text/javascript">
+	$(function() {
+		$('a.lightbox').lightBox(); // Select all links with lightbox class
+	});
+	</script>
+<% end %>
 
+<h1 class="mostwanted">Marion County's Most Wanted</h1>
+
+<div class="mugshots">
+	<% @wanteds.each do|wanted| %>
+		<a href="#<%= wanted.id %>"<%= image_tag wanted.mug.url(:small) %></a>
+	<% end %>
+</div>
+<hr/>
+<h3 class="mostwanted">
+	If you have information that can lead to the apprehension of these suspects, contact us immediately
+	at (423) 942-2525.
+</h3>
+<hr/>
 <% @wanteds.each do |wanted| %>
-  <div class="wanted">
-		<p><%= image_tag wanted.mug.url(:thumb)  %></p>
-		<p><%=h wanted.firstname.capitalize %> <%=h wanted.lastname.capitalize %></p>
-		<p><%=h wanted.alias %></p>
-		<p><%=h wanted.race %> | <%=h wanted.sex %> | <%=h wanted.eyes %></p>
-		<p><%=h wanted.hair %> | <%=h wanted.height %> | <%=h wanted.weight %></p>
-    <p><%=h wanted.marks %></p>
+  <div class="wanteditem">
+		<%= link_to image_tag(wanted.mug.url(:thumb)), wanted.mug.url, :class => "lightbox", :title=> wanted.lastname  %>
+		<h4><a name="<%= wanted.id %>"><%=h wanted.firstname.titleize %> <%=h wanted.lastname.titleize %></a></h4>
 		<p><%=h wanted.charges %></p>
-		<p><%=h wanted.other %></p>
-		<p><%= link_to 'Show', wanted %></p>
 	</div>
+	<hr/>
 <% end %>

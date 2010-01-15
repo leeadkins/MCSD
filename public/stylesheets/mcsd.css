@@ -161,6 +161,43 @@ body {
   z-index: 2;
 }
 
+h1.mostwanted, h3.mostwanted {
+  text-align: center;
+}
+
+h3.mostwanted {
+  margin: 15px;
+}
+
+.wanteditem {
+  clear: both;
+  padding: 15px;
+  position: relative;
+}
+
+.wanteditem img {
+  position: relative;
+}
+
+.wanteditem h4 {
+  font-size: 1.4em;
+  position: absolute;
+  top: 15px;
+  left: 130px;
+}
+
+.wanteditem p {
+  position: absolute;
+  font-size: 1.2em;
+  top: 45px;
+  left: 130px;
+}
+
+.wanteditem a {
+  color: #000;
+  text-decoration: none;
+}
+
 #footer  {
   margin-bottom: 15px;
   background-color: #333;
