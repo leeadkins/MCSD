@@ -3,12 +3,12 @@ class Admin::WantedsController < ApplicationController
   before_filter :require_user
   #For Authorization
   filter_resource_access
-  
+  filter_access_to :sort
   # GET /wanteds
   # GET /wanteds.xml
   layout "subpage"
   def index
-    @wanteds = Wanted.all
+    @wanteds = Wanted.all(:order => "rank")
 
     respond_to do |format|
       format.html # index.html.erb
@@ -87,5 +87,11 @@ class Admin::WantedsController < ApplicationController
       format.html { redirect_to(wanteds_url) }
       format.xml  { head :ok }
     end
+  end
+  def sort
+    params[:wanted].each_with_index do |id, index|
+      Wanted.update_all(['rank=?', index+1], ['id=?', id])
+    end
+    render :text => "test" 
   end
 end

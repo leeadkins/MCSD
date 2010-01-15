@@ -2,7 +2,7 @@ class WantedsController < ApplicationController
   # GET /wanteds
   # GET /wanteds.xml
   def index
-    @wanteds = Wanted.all(:order => "lastname ASC")
+    @wanteds = Wanted.all(:order => "rank ASC")
 
     respond_to do |format|
       format.html # index.html.erb

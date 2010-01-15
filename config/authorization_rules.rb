@@ -27,7 +27,7 @@ authorization do
     includes :superuser
     has_permission_on :admin_pages, :to => :manage
     has_permission_on :admin_posts, :to => :manage
-    has_permission_on :admin_wanteds, :to => :manage
+    has_permission_on :admin_wanteds, :to => [:sort, :manage]
     has_permission_on :admin_assets, :to => :manage
     has_permission_on :admin_dashboard, :to => [:manage, :browser, :upload, :individual]
     has_permission_on :admin_users, :to => :manage

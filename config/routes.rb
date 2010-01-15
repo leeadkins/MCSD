@@ -43,7 +43,7 @@ ActionController::Routing::Routes.draw do |map|
     # Directs /admin/products/* to Admin::ProductsController (app/controllers/admin/products_controller.rb)
     admin.resources :pages, :collection => {:sort => :put}
     admin.resources :posts
-    admin.resources :wanteds
+    admin.resources :wanteds, :collection => {:sort => :put}
     admin.resources :assets
     admin.resources :users
     admin.resources :offenders

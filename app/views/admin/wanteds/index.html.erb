@@ -1,42 +1,25 @@
+<% content_for :head do %>
+	<%= javascript_tag "var AUTH_TOKEN = #{form_authenticity_token.inspect};" if protect_against_forgery? %>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#wantedsList').sortable({ items: '.list_item', axis: 'y', update: function(){
+				$.post('/admin/wanteds/sort', '_method=put&authenticity_token='+ AUTH_TOKEN + '&' +$(this).sortable('serialize'));
+			}});
+		});
+	</script>
+<% end%>
 <h1>Listing wanteds</h1>
-
-<table>
-  <tr>
-    <th>Lastname</th>
-    <th>Firstname</th>
-    <th>Alias</th>
-    <th>Race</th>
-    <th>Sex</th>
-    <th>Eyes</th>
-    <th>Hair</th>
-    <th>Height</th>
-    <th>Weight</th>
-    <th>Other</th>
-    <th>Marks</th>
-    <th>Charges</th>
-  </tr>
-
+<ul id="wantedsList" class="page_list">
 <% @wanteds.each do |wanted| %>
-  <tr>
-    <td><%=h wanted.lastname %></td>
-    <td><%=h wanted.firstname %></td>
-    <td><%=h wanted.alias %></td>
-    <td><%=h wanted.race %></td>
-    <td><%=h wanted.sex %></td>
-    <td><%=h wanted.eyes %></td>
-    <td><%=h wanted.hair %></td>
-    <td><%=h wanted.height %></td>
-    <td><%=h wanted.weight %></td>
-    <td><%=h wanted.other %></td>
-    <td><%=h wanted.marks %></td>
-    <td><%=h wanted.charges %></td>
-    <td><%= link_to 'Show', admin_wanted_path(wanted) %></td>
-    <td><%= link_to 'Edit', edit_admin_wanted_path(wanted) %></td>
-    <td><%= link_to 'Destroy', admin_wanted_path(wanted), :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+  <li class="list_item" id="wanted_<%= wanted.id -%>">
+   <%=h wanted.lastname %>
+   <%=h wanted.firstname %>
+   <%= link_to 'Show', admin_wanted_path(wanted) %>
+   <%= link_to 'Edit', edit_admin_wanted_path(wanted) %>
+   <%= link_to 'Destroy', admin_wanted_path(wanted), :confirm => 'Are you sure?', :method => :delete %>
+</li>
 <% end %>
-</table>
-
+</ul>
 <br />
 
 <%= link_to 'New wanted', new_admin_wanted_path %>
