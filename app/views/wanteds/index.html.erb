@@ -12,7 +12,7 @@
 
 <div class="mugshots">
 	<% @wanteds.each do|wanted| %>
-		<a href="#<%= wanted.id %>"<%= image_tag wanted.mug.url(:small) %></a>
+		<a href="#<%= wanted.id %>"><%= image_tag wanted.mug.url(:small) %></a>
 	<% end %>
 </div>
 <hr/>
