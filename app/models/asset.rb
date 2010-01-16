@@ -1,6 +1,7 @@
 class Asset < ActiveRecord::Base
   has_attached_file :file,
-                    :styles => {:large => "600x600>",
+                    :styles => {:display => "900x900>",
+                                :large => "600x600>",
                                 :medium => "300x300>",
                                 :thumb => "100x100>"}
                                 
