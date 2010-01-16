@@ -1,4 +1,13 @@
+<% content_for :head do %>
+	<script type="text/javascript" src="/javascripts/jquery.lightbox-0.5.js"></script>
+	<link rel="stylesheet" href="/stylesheets/jquery.lightbox-0.5.css" type="text/css" media="screen" title="no title" charset="utf-8">
+	<script type="text/javascript">
+	$(function() {
+		$('a.lightbox').lightBox(); // Select all links with lightbox class
+	});
+	</script>
+<% end %>
 <h2>
   <%=h @page.title %>
 </h2>
- <%= sanitize(@page.body) %>
+ <%= @page.body %>
