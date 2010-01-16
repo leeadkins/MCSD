@@ -12,7 +12,14 @@
 
 <div class="mugshots">
 	<% @wanteds.each do|wanted| %>
-		<a href="#<%= wanted.id %>"><%= image_tag wanted.mug.url(:small) %></a>
+		<a href="#<%= wanted.id %>">
+		<div class="wantedimageblock">
+			<% if wanted.apprehended %>
+				<%= image_tag "apprehended_overlay_big.png", :class => "wanted_overlay" %>
+			<% end %>
+			<%= image_tag wanted.mug.url(:small) %>
+		</div>
+		</a>
 	<% end %>
 </div>
 <hr/>
@@ -23,6 +30,9 @@
 <hr/>
 <% @wanteds.each do |wanted| %>
   <div class="wanteditem">
+		<% if wanted.apprehended %>
+			<%= image_tag "apprehended_overlay_small.png", :class => "wanted_overlay" %>
+		<% end %>
 		<%= link_to image_tag(wanted.mug.url(:thumb)), wanted.mug.url, :class => "lightbox", :title=> wanted.lastname  %>
 		<h4><a name="<%= wanted.id %>"><%=h wanted.firstname.titleize %> <%=h wanted.lastname.titleize %></a></h4>
 		<p><%=h wanted.charges %></p>

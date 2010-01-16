@@ -169,6 +169,23 @@ h3.mostwanted {
   margin: 15px;
 }
 
+.wantedimageblock .wanted_overlay {
+  position: absolute;
+  top: 2;
+  left: 2;
+  z-index: 2;
+}
+
+.wanteditem .wanted_overlay {
+  position: absolute;
+  top: 15;
+  left: 15;
+  z-index: 2;
+}
+.wantedimageblock {
+  display: inline;
+  position: relative;
+}
 .wanteditem {
   clear: both;
   padding: 15px;
@@ -198,6 +215,9 @@ h3.mostwanted {
   text-decoration: none;
 }
 
+.mugshots a {
+  text-decoration: none;
+}
 #footer  {
   margin-bottom: 15px;
   background-color: #333;
