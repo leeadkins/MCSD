@@ -3,7 +3,7 @@
 	<link rel="stylesheet" href="/stylesheets/jquery.lightbox-0.5.css" type="text/css" media="screen" title="no title" charset="utf-8">
 	<script type="text/javascript">
 	$(function() {
-		$('a.lightbox').lightBox(); // Select all links with lightbox class
+		$('a[href^=/system/files/]').lightBox(); // Select all links with lightbox class
 	});
 	</script>
 <% end %>
