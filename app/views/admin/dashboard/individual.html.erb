@@ -18,6 +18,7 @@
 	<a href="<%= @asset.file.url(:thumb) %>">Thumbnail</a>
 	<a href="<%= @asset.file.url(:medium) %>">Medium</a>
 	<a href="<%= @asset.file.url(:large) %>">Large</a>
+	<a href="<%= @asset.file.url(:display) %>">Display</a>
 	<a href="<%= @asset.file.url %>">Original</a>
 	</div>
 	<p><%= link_to "Back to List", :action => :browser, :CKEditorFuncNum => @ckcallback %></p>
