@@ -1,0 +1,56 @@
+<% content_for :head do %>
+<script type="text/javascript">
+	function show_add_new(){
+		$(".add_new").show();
+	}
+	
+	function hide_add_new(){
+		$(".add_new").hide();
+	}
+</script>
+<% end %>
+<div class="add_new">
+	<p class="add_controls">
+		<%= link_to_function "CLOSE", 'hide_add_new()'%>
+	</p>
+	<% form_for @event, :url => admin_event_url(@event), :html => {:multipart => true} do |f| %>
+	<% newer = f.object.class.reflect_on_association(:assets).klass.new %>
+	<% f.fields_for :assets, newer do |a|%>	
+		<p>
+			<%= a.label :name %>:
+			<%= a.text_field :name %>
+		</p>
+		<p>
+			<%= a.label :description %>:
+			<%= a.text_field :description%>
+		</p>
+		<p>
+			<%= a.label :file %>:
+			<%= a.file_field :file %>
+		</p>
+	<% end %>
+		<%= f.submit %>
+	<% end %>
+</div>
+<p>
+  <b>Title:</b>
+  <%=h @event.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @event.description %>
+</p>
+
+<% for asset in @event.assets %>
+	<div class="event_item">
+	<p>
+		<%= image_tag asset.file.url(:cover) %>
+	</p>
+	</div>
+<% end %>
+<div class="event_controls">
+<%= link_to_function 'Add', 'show_add_new()' %> | 
+<%= link_to 'Edit', edit_admin_event_path(@event) %> |
+<%= link_to 'Back', admin_events_path %>
+</div>

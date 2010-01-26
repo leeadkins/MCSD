@@ -1,0 +1,9 @@
+<h1>Events</h1>
+<% for event in @events %>
+	<div class="gallery_item">
+	<% if !event.assets.empty? %>
+		<%= image_tag event.assets.first.file(:cover) %>
+	<% end %>
+	<p><%= link_to event.title, event %></p>
+	</div>
+<% end %>

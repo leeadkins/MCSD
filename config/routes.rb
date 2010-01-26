@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :events, :has_many => :assets, :only => [:index, :show]
+
   map.resources :offenders, :only => [:index, :show]
 
   
@@ -47,6 +49,7 @@ ActionController::Routing::Routes.draw do |map|
     admin.resources :assets
     admin.resources :users
     admin.resources :offenders
+    admin.resources :events, :has_many => :assets
   end
 
   # You can have the root of your site routed with map.root -- just remember to delete public/index.html.

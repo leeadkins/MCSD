@@ -8,6 +8,7 @@
 
 <% @assets.each do |asset| %>
   <tr>
+		<td><%= image_tag asset.file.url(:thumb) %>
     <td><%=h asset.name %></td>
     <td><%=h asset.description %></td>
     <td><%= link_to 'Show', admin_asset_path(asset) %></td>

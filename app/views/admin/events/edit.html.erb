@@ -1,0 +1,31 @@
+<h1>Editing event</h1>
+
+<% form_for @event, :url => admin_event_path(@event), :html => {:multipart => true} do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+	<% f.fields_for :assets do |a| %>
+		<p>
+			<%= a.text_field :name %>
+		</p>
+		<p>
+			<%= a.text_field :description%>
+		</p>
+		<p>
+			<%= a.file_field :file %>
+		</p>
+	<% end %>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', admin_event_path(@event) %> |
+<%= link_to 'Back', admin_events_path %>

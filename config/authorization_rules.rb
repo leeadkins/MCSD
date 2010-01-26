@@ -2,7 +2,7 @@
 
 authorization do
   role :guest do
-    has_permission_on [:pages, :posts, :wanteds, :home], :to => :read
+    has_permission_on [:pages, :posts, :wanteds, :home, :offenders], :to => :read
   end
   
   role :visitor do
@@ -32,6 +32,8 @@ authorization do
     has_permission_on :admin_dashboard, :to => [:manage, :browser, :upload, :individual]
     has_permission_on :admin_users, :to => :manage
     has_permission_on :admin_offenders, :to => :manage
+    has_permission_on :admin_events, :to => :manage
+    has_permission_on :admin_gallery_items, :to => :manage
   end
 end
 

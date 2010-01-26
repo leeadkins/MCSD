@@ -218,6 +218,13 @@ h3.mostwanted {
 .mugshots a {
   text-decoration: none;
 }
+
+.gallery_item {
+  float: left;
+  padding: 15px;
+  background-color: #ddd;
+  margin: 15px;
+}
 #footer  {
   margin-bottom: 15px;
   background-color: #333;

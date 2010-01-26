@@ -156,6 +156,7 @@ body {
 
 #list {
   background-color: #FFFFFF;
+  position: relative;
 }
 .list_header_title{
   display: block;
@@ -338,4 +339,37 @@ form .submit{
   border-radius: 10px;
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
+}
+.event_item {
+  float: left;
+  padding: 15px;
+  margin: 10px;
+  background-color: #eee;
+  border: 1px #aaa solid;
+}
+
+.event_controls {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  margin: 5px;
+  padding: 10px;
+  background-color: #eee;
+  border: 1px #ddd solid;
+}
+.add_new {
+  position: relative;
+  display: none;
+  border: 2px #bbb solid;
+  width: 500px;
+  height: 300px;
+  background-color: #ddd;
+  background-color: rgba(229,229,229,0.9);
+  position: fixed;
+  top: 100px;
+}
+.add_new .add_controls {
+  position: absolute;
+  right: 0px;
+  top: 0px;
 }

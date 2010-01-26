@@ -1,0 +1,20 @@
+<% content_for :head do %>
+	<script type="text/javascript" src="/javascripts/jquery.lightbox-0.5.js"></script>
+	<link rel="stylesheet" href="/stylesheets/jquery.lightbox-0.5.css" type="text/css" media="screen" title="no title" charset="utf-8">
+	<script type="text/javascript">
+	$(function() {
+		$('a.lightbox').lightBox(); // Select all links with lightbox class
+	});
+	</script>
+<% end %>
+<h1><%= @event.title %></h1>
+<p><%= @event.description %></p>
+<% for asset in @event.assets %>
+	<div class="gallery_item">
+		<%= link_to image_tag(asset.file.url(:cover)), asset.file.url(:display), :class => "lightbox" %>
+	<p><%= asset.name %></p>
+	</div>
+<% end %>
+<p>
+	<%= link_to "Back to Events", events_url %>
+</p>
