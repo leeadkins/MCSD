@@ -122,6 +122,7 @@ body {
 
 #middle #content .contentwrapper {
   padding: 15px;
+  position: relative;
 }
 
 .homeblock {
@@ -222,8 +223,16 @@ h3.mostwanted {
 .gallery_item {
   float: left;
   padding: 15px;
-  background-color: #ddd;
-  margin: 15px;
+  border: 2px #ddd solid;
+  background-color: #fff;
+  margin-left: 5px;
+  margin-bottom: 5px;
+}
+
+.event_controls {
+  position: absolute;
+  right: 5px;
+  top: 5px;
 }
 #footer  {
   margin-bottom: 15px;
