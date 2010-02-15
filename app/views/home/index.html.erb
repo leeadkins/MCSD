@@ -1,17 +1,30 @@
-<h1>Welcome!</h1>
-<p>Welcome to the new home of the Marion County Sheriff's Department. Over the coming weeks, this site will evolve and provide you with information about the department as well as useful links for related services.</p>
+<div class="homecontent">
+	<h1>Welcome!</h1>
+	<p>Welcome to the new home of the Marion County Sheriff's Department. Over the coming weeks, this site will evolve and provide you with information about the department as well as useful links for related services.</p>
 
-<p>
-	For now, please check the current sections in the sidebar. If you have any questions or concerns, feel free to contact as at webmaster@marioncosheriff.com
-</p>
-<div class="homeblock newsposts">
-	<h5>Recent News Posts</h5>
-	<% for post in Post.all(:limit => 5, :order => "created_at DESC")%>
-		<p><%= link_to post.title, post %> on <%= post.created_at.to_s(:short) %></p>
-	<% end %>
+	<p>
+		For now, please check the current sections in the sidebar. If you have any questions or concerns, feel free to contact as at webmaster@marioncosheriff.com
+	</p>	
 </div>
-<div class="homeblock ghso">
-	<h5>Governor's Highway Safety Office</h5>	
-	<a href="http://www.tdot.state.tn.us/ghso/booze_lose.htm"><%= image_tag "bili.gif" %></a>
-	<a href="http://www.tdot.state.tn.us/ClickItorTicket/default.htm"><%= image_tag "clickit07.gif" %></a>
+
+<div class="homeblock sheriff">
+	<p>
+	<%= image_tag "http://marioncosheriff.com/system/files/41/cover/SHERIFF_RONNIE_BURNETT.JPG?1266209684" %>
+	</p>
+	<p>
+		Sheriff Ronnie Burnett
+	</p>
+</div>
+<div class="homebottom">
+	<div class="homeblock newsposts">
+		<h5>Recent News Posts</h5>
+		<% for post in Post.all(:limit => 5, :order => "created_at DESC")%>
+			<p><%= link_to post.title, post %> on <%= post.created_at.to_s(:short) %></p>
+		<% end %>
+	</div>
+	<div class="homeblock ghso">
+		<h5>Governor's Highway Safety Office</h5>	
+		<a href="http://www.tdot.state.tn.us/ghso/booze_lose.htm"><%= image_tag "bili.gif" %></a>
+		<a href="http://www.tdot.state.tn.us/ClickItorTicket/default.htm"><%= image_tag "clickit07.gif" %></a>
+	</div>
 </div>
