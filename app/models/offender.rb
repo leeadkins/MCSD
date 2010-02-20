@@ -4,4 +4,15 @@ class Offender < ActiveRecord::Base
                                 :medium => ["300x300#", :png],
                                 :thumb => ["100x100#", :png]},
                     :convert_options => { :thumb => '-gravity center' }
+                    
+  attr_accessor :image_url
+  def image_url
+    image.url
+  end
+
+  def to_xml(options={})
+    options[:methods] ||=[]
+    options[:methods] << :image_url
+    super(options)
+  end
 end

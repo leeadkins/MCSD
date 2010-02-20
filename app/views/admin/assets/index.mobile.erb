@@ -1,0 +1,8 @@
+<% content_for :title do %>
+	Assets
+<% end %>
+<ul class="rounded">
+	<% @assets.each do |asset| %>
+	<li class="arrow"><%= link_to image_tag(asset.file.url(:thumb)), admin_asset_path(asset) %></li>
+	<% end %>
+</ul>

@@ -11,6 +11,12 @@
 		<%= @offender.tid %>
 	</li>
 </ul>
+<h1>Mug Shot</h1>
+<ul class="rounded">
+	<li>
+	  <%= image_tag @offender.image.url(:thumb) %>
+	</li>
+</ul>
 <h1>Address</h1>
 <ul class="rounded">
 	<li>

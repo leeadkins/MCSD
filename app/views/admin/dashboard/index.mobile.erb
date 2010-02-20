@@ -1,11 +1,15 @@
 <% content_for :title do %>
-	Dashboard
+	Administration
 <% end %>
+<p style="text-align: center"><%= image_tag "headerlogo.png", :style =>"margin: 10px" %></p>
 <ul class="plastic">
 	<li class="arrow"><%= link_to 'Sex Offenders', admin_offenders_path %>
-		<small class="counter"><%= Offender.all.count %></small>
+		<small class="counter"><%= Offender.all.count -%></small>
 	</li>
 	<li class="arrow"><%= link_to 'Most Wanted', admin_wanteds_path %>
-	<small class="counter"><%= Wanted.all.count %></small>	
+	<small class="counter"><%= Wanted.all.count -%></small>	
+	</li>
+	<li class="arrow"><%= link_to 'Assets', admin_assets_path %>
+	<small class="counter"><%= Asset.all.count -%></small>	
 	</li>
 </ul>
