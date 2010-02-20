@@ -1,0 +1,56 @@
+<% content_for :title do %>
+	Edit <%= @wanted.lastname %>
+<% end %>
+<% form_for @wanted, :url => admin_wanted_path(@wanted), :class => "form", :html => {:multipart => true} do |f| %>
+  <%= f.error_messages %>
+<ul class="rounded">
+  <li>
+    <%= f.text_field :lastname, :placeholder => "Last Name" %>
+  </li>
+  <li>
+    <%= f.text_field :firstname, :placeholder => "First Name" %>
+  </li>
+  <li>
+    <%= f.text_field :alias, :placeholder => "Alias" %>
+  </li>
+  <li>
+    <%= f.text_field :race, :placeholder => "Race" %>
+  </li>
+  <li>
+    <%= f.text_field :sex, :placeholder => "Sex" %>
+  </li>
+  <li>
+    <%= f.text_field :eyes, :placeholder => "Eyes" %>
+  </li>
+  <li>
+    <%= f.text_field :hair, :placeholder => "Hair" %>
+  </li>
+  <li>
+    <%= f.text_field :height, :placeholder => "Height" %>
+  </li>
+  <li>
+    <%= f.text_field :weight, :placeholder => "Weight" %>
+  </li>
+  <li>
+    <%= f.text_field :other, :placeholder => "Other" %>
+  </li>
+  <li>
+    <%= f.text_field :marks, :placeholder => "Marks" %>
+  </li>
+  <li>
+    <%= f.text_field :charges, :placeholder => "Charges" %>
+  </li>
+	<li>
+		<%= f.file_field :mug %>
+	</li>
+	<li>
+		Apprehended
+		<span class="toggle">
+    <%= f.check_box :apprehended %>
+		</span>
+  </li>
+</ul>
+		<p><a href="#" class="submit grayButton"
+id="submitButton">Update</a></p>
+
+<% end %>

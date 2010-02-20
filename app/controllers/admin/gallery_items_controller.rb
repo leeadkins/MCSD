@@ -1,6 +1,8 @@
 class Admin::GalleryItemsController < ApplicationController
   #For Authentication
+  before_filter :prep_mobile
   before_filter :require_user, :get_event
+ 
   #For Authorization
   filter_resource_access
   # GET /events

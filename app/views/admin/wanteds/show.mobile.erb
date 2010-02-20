@@ -1,0 +1,29 @@
+<% content_for :title do %>
+	<%= @wanted.lastname %>
+<% end %>
+
+<h1>Suspect</h1>
+<ul class="rounded">
+	<li>
+		<%= @wanted.firstname.titleize + " "  + @wanted.lastname.titleize %>
+	</li>
+</ul>
+<h1>Mug Shot</h1>
+<ul class="rounded">
+	<li>
+	  <%= image_tag @wanted.mug.url(:small) %>
+	</li>
+</ul>
+<h1>Status</h1>
+<ul class="rounded">
+	<li>
+		<%- if @wanted.apprehended -%>
+			Apprehended
+		<%- else -%>
+		  At Large
+		<%- end -%>
+	</li>
+</ul>
+<ul class="rounded">
+	<li class="arrow"><%= link_to "Edit", edit_admin_wanted_path(@wanted)%></li>
+</ul>

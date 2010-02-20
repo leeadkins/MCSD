@@ -1,0 +1,12 @@
+<% content_for :title do %>
+	Most Wanted
+<% end %>
+
+<% content_for :toolbar do %>
+<%= link_to "+", nil, :class => "add" unless current_page? dashboard_path %>
+<% end %>
+<ul class="rounded">
+	<% @wanteds.each do |offender| %>
+	<li class="arrow"><%= link_to offender.firstname.titleize + " " + offender.lastname.titleize, admin_wanted_path(offender) %></li>
+	<% end %>
+</ul>

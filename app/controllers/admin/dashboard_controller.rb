@@ -1,6 +1,6 @@
 class Admin::DashboardController < ApplicationController
   layout "admin"
-  
+  before_filter :prep_mobile
   skip_before_filter :verify_authenticity_token, :only => :upload
   #For Authentication
   before_filter :require_user

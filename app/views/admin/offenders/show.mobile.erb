@@ -1,0 +1,35 @@
+<% content_for :title do %>
+	<%= @offender.lastname %>
+<% end %>
+
+<h1>Offender</h1>
+<ul class="rounded">
+	<li>
+		<%= @offender.firstname.titleize + " "  + @offender.lastname.titleize %>
+	</li>
+	<li>
+		<%= @offender.tid %>
+	</li>
+</ul>
+<h1>Address</h1>
+<ul class="rounded">
+	<li>
+	  <%=h @offender.address.titleize %>
+	</li>
+	<li>
+	  <%=h @offender.city.titleize %>
+	</li>
+</ul>
+<h1>Status</h1>
+<ul class="rounded">
+	<li>
+		<%- if @offender.absconded -%>
+			Absconded
+		<%- else -%>
+		  Normal
+		<%- end -%>
+	</li>
+</ul>
+<ul class="rounded">
+	<li class="arrow"><%= link_to "Edit", edit_admin_offender_path(@offender)%></li>
+</ul>

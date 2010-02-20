@@ -1,0 +1,37 @@
+<% content_for :title do %>
+	Edit <%= @offender.lastname %>
+<% end %>
+
+<% form_for @offender, :url => admin_offender_url(@offender), :class=>"form" do |f| %>
+  <%= f.error_messages %>
+<ul class="rounded">
+  <li>
+    <%= f.text_field :tid, :placeholder => "TID" %>
+  </li>
+  <li>
+    <%= f.text_field :lastname, :placeholder => "Last Name" %>
+  </li>
+  <li>
+    <%= f.text_field :firstname, :placeholder => "First Name" %>
+  </li>
+  <li>
+    <%= f.text_field :middle, :placeholder => "Middle Name" %>
+  </li>
+  <li>
+    <%= f.text_field :address, :placeholder => "Address" %>
+  </li>
+  <li>
+    <%= f.text_field :city, :placeholder => "City" %>
+  </li>
+  <li>
+    <%= f.text_field :target, :placeholder => "Target" %>
+  </li>
+	<li>
+		Absconded
+	  <span class="toggle"><%= f.check_box :absconded %></span>
+	</li>
+	</ul>
+			<p><a href="#" class="submit grayButton"
+	id="submitButton">Update</a></p>
+
+<% end %>

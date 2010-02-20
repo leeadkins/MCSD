@@ -1,0 +1,8 @@
+<% content_for :title do %>
+	Sex Offenders
+<% end %>
+<ul class="rounded">
+	<% @offenders.each do |offender| %>
+	<li class="arrow"><%= link_to offender.firstname.titleize + " "+ offender.lastname.titleize, admin_offender_path(offender) %></li>
+	<% end %>
+</ul>

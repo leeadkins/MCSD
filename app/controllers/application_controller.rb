@@ -9,7 +9,13 @@ class ApplicationController < ActionController::Base
   filter_parameter_logging :password, :password_confirmation
   helper_method :current_user_session, :current_user
   
+  
   private
+  
+    def prep_mobile
+      request.format = :mobile if mobile_device?
+    end
+    
     def current_user_session
       return @current_user_session if defined?(@current_user_session)
       @current_user_session = UserSession.find
@@ -37,6 +43,11 @@ class ApplicationController < ActionController::Base
         return false
       end
     end
+    
+    def mobile_device?
+      request.user_agent =~ /Mobile|webOS/
+    end
+    helper_method :mobile_device?
     
     def require_no_user
       unless current_user

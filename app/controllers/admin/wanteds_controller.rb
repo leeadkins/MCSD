@@ -1,6 +1,7 @@
 class Admin::WantedsController < ApplicationController
   #For Authentication
   before_filter :require_user
+  before_filter :prep_mobile
   #For Authorization
   filter_resource_access
   filter_access_to :sort
@@ -11,6 +12,7 @@ class Admin::WantedsController < ApplicationController
     @wanteds = Wanted.all(:order => "rank")
 
     respond_to do |format|
+      format.mobile
       format.html # index.html.erb
       format.xml  { render :xml => @wanteds }
     end
@@ -22,6 +24,7 @@ class Admin::WantedsController < ApplicationController
     @wanted = Wanted.find(params[:id])
 
     respond_to do |format|
+      format.mobile
       format.html # show.html.erb
       format.xml  { render :xml => @wanted }
     end
@@ -33,6 +36,7 @@ class Admin::WantedsController < ApplicationController
     @wanted = Wanted.new
 
     respond_to do |format|
+      format.mobile
       format.html # new.html.erb
       format.xml  { render :xml => @wanted }
     end
@@ -51,9 +55,11 @@ class Admin::WantedsController < ApplicationController
     respond_to do |format|
       if @wanted.save
         flash[:notice] = 'Wanted was successfully created.'
+        format.mobile { redirect_to(admin_wanted_path(@wanted)) }
         format.html { redirect_to(admin_wanted_path(@wanted)) }
         format.xml  { render :xml => @wanted, :status => :created, :location => @wanted }
       else
+        format.mobile { render :action => "new" }
         format.html { render :action => "new" }
         format.xml  { render :xml => @wanted.errors, :status => :unprocessable_entity }
       end
@@ -68,9 +74,11 @@ class Admin::WantedsController < ApplicationController
     respond_to do |format|
       if @wanted.update_attributes(params[:wanted])
         flash[:notice] = 'Wanted was successfully updated.'
+        format.mobile { redirect_to(admin_wanted_path(@wanted)) }
         format.html { redirect_to(admin_wanted_path(@wanted)) }
         format.xml  { head :ok }
       else
+        format.mobile { render :action => "edit" }
         format.html { render :action => "edit" }
         format.xml  { render :xml => @wanted.errors, :status => :unprocessable_entity }
       end
@@ -84,6 +92,7 @@ class Admin::WantedsController < ApplicationController
     @wanted.destroy
 
     respond_to do |format|
+      format.mobile { redirect_to(wanteds_url) }
       format.html { redirect_to(wanteds_url) }
       format.xml  { head :ok }
     end

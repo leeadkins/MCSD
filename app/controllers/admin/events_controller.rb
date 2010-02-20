@@ -1,6 +1,7 @@
 class Admin::EventsController < ApplicationController
   #For Authentication
   before_filter :require_user
+  before_filter :prep_mobile
   #For Authorization
   filter_resource_access
   # GET /events
