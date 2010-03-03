@@ -9,7 +9,7 @@ class Admin::OffendersController < ApplicationController
   # GET /offenders
   # GET /offenders.xml
   def index
-    @offenders = Offender.all
+    @offenders = Offender.all(:order => "lastname")
     respond_to do |format|
       format.mobile
       format.html # index.html.erb
