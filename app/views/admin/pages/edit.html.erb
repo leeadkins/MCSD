@@ -50,6 +50,15 @@
     <%= f.label :published %>:
     <%= f.check_box :published %>
   </p>
+	<p>
+		<%= f.label :parent %>:
+		<select id="page_parent" name="page[parent]">
+			<option value="0">Root</option>
+			<% for page in Page.roots %>
+			<option value="<%= page.id %>"><%= page.menu %></option>
+			<% end %>
+		</select>
+	</p>
   <p>
     <%= f.submit 'Update' %>
   </p>

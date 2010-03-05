@@ -1,3 +1,6 @@
-<% for page in Page.published.all(:order => "rank") %>
+<% for page in Page.published.roots.all(:order => "rank") %>
 <li><%= link_to page.menu.titleize, slugged_page_url(page.slug) %></li>
-<% end %>
+	<%- for sub in Page.published.all(:conditions => {:parent => page.id}, :order => "rank") -%>
+		<li class="subpage"><%= link_to sub.menu.titleize, slugged_page_url(sub.slug) %></li>
+	<%- end -%>
+<%- end -%>
